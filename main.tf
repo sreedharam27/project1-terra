@@ -1,7 +1,7 @@
 provider  "aws" {
 region = "us-east-1"
-access_key = "AKIASTZS7WGYRCG35O6A"
-secret_key = "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"
+access_key = "AKIASTZS7WGYUAILQZIZ"
+secret_key = "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"
 }
 resource "aws_instance" "one" {
   ami               ="ami-006dcf34c09e50022"

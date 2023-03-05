@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
   key_name           = "freshpair"
   availability_zone = "us-east-1d"
   tags = {
-  Name = "basic project"
+  Name = "mouni-tf"
   }
 }
     

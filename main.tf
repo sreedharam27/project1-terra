@@ -14,9 +14,9 @@ resource "aws_instance" "one" {
   #!/bin/bash
   sudo -i
   yum install httpd -y
-  systemctl start httpd -y
+  systemctl start httpd 
   chkconfig httpd on
-  echo "hello everyone this my new instance server-1" >/var/www/html/index.html
+  echo "hi every one hello, everyone this my new instance server-1" > /var/www/html/index.html
   EOF
   tags = {
   Name = "server-1"
@@ -33,9 +33,9 @@ resource "aws_instance" "two" {
   #!/bin/bash
   sudo -i
   yum install httpd -y
-  systemctl start httpd -y
+  systemctl start httpd 
   chkconfig httpd on
-  echo "hello everyone this my new instance server-2" >/var/www/html/index.html
+  echo "hi every one ,hello everyone this my new instance server-2" > /var/www/html/index.html
   EOF
   tags = {
   Name = "server-2"

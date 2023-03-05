@@ -7,7 +7,7 @@ resource "aws_instance" "one" {
   ami               ="ami-006dcf34c09e50022"
   instance_type     = "t2.micro"
   key_name           = "freshpair"
-  availability_zone = "us-east-1c"
+  availability_zone = "us-east-1d"
   tags = {
   Name = "basic project"
   }

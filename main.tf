@@ -10,7 +10,7 @@ resource "aws_instance" "one" {
   key_name                  = "freshpair"
   vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone = "us-east-1b"
-  user_data = <<-EOF
+  user_data = <<EOF
   #!/bin/bash
   sudo -i
   yum install httpd -y
@@ -29,7 +29,7 @@ resource "aws_instance" "two" {
   key_name                  = "freshpair"
   vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone         = "us-east-1c"
-  user_data = <<-EOF
+  user_data = <<EOF
   #!/bin/bash
   sudo -i
   yum install httpd -y

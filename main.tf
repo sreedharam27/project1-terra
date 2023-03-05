@@ -8,7 +8,7 @@ resource "aws_instance" "one" {
   ami                       ="ami-006dcf34c09e50022"
   instance_type             = "t2.micro"
   key_name                  = "freshpair"
-  vpc_security_group_ids    = [aws_security_group_elb-sg.id]
+  vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone = "us-east-1b"
   user_data = <<-EOF
   #!/bin/bash
@@ -27,7 +27,7 @@ resource "aws_instance" "two" {
   ami                       ="ami-006dcf34c09e50022"
   instance_type             = "t2.micro"
   key_name                  = "freshpair"
-  vpc_security_group_ids    = [aws_security_group_elb-sg.id]
+  vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone         = "us-east-1c"
   user_data = <<-EOF
   #!/bin/bash
@@ -42,7 +42,7 @@ resource "aws_instance" "two" {
   }
 }
 
-resource "aws_security_group" "elb-sg" {
+resource "aws_security_group" "three" {
   name        = "elb-sg"
   
   ingress {

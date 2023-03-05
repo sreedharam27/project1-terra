@@ -10,14 +10,14 @@ resource "aws_instance" "one" {
   key_name                  = "freshpair"
   vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone = "us-east-1b"
-  user_data = <<EOF
-  #!/bin/bash
-  sudo -i
-  yum install httpd -y
-  systemctl start httpd 
-  chkconfig httpd on
-  echo "hi every one hello, everyone this my new instance server-1" > /var/www/html/index.html
-  EOF
+ user_data       = <<EOF
+ #!/bin/bash
+ sudo -i
+yum install httpd -y
+systemctl start httpd
+chkconfig httpd on
+echo "hai all this is my website created by terraform infrastructurte by mounika varma server-1" > /var/www/html/index.html
+EOF
   tags = {
   Name = "server-1"
   }
@@ -29,14 +29,14 @@ resource "aws_instance" "two" {
   key_name                  = "freshpair"
   vpc_security_group_ids    = [aws_security_group.three.id]
   availability_zone         = "us-east-1c"
-  user_data = <<EOF
+  user_data       = <<EOF
   #!/bin/bash
   sudo -i
   yum install httpd -y
-  systemctl start httpd 
+  systemctl start httpd
   chkconfig httpd on
-  echo "hi every one ,hello everyone this my new instance server-2" > /var/www/html/index.html
-  EOF
+  echo "hai all this is my website created by terraform infrastructurte by mounika varma server-2" > /var/www/html/index.html
+ EOF
   tags = {
   Name = "server-2"
   }
